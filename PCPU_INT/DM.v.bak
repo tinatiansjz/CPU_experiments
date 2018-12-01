@@ -1,0 +1,110 @@
+module DM(
+  input clk, 
+  input rst,
+  input [31:0] Addr_i,
+  input [31:0] DataIn_i,//Data that needs to written back to DM
+  input MemWrite_i,//Memory control signal
+  input [3:0] BE_i,
+  input Sign_i,//the data needs to be zero-extended or sign-extended (lb,lbu,lh,lhu)
+  
+  output [31:0] DataOut_o
+  );
+	wire [31:0] wdAddr;
+	reg  [31:0] Mem[5096:0];
+	reg  [31:0] data;
+	integer i;
+	assign wdAddr = {2'b0, Addr_i[31:2]};//ImAddress shifts right for two bits
+	
+	initial
+	begin
+	  $readmemh("DMdata.txt", Mem, 12'h00);
+	end
+	
+	always@(posedge clk or posedge rst)
+	begin
+	  if (rst)
+	    begin
+	      //for (i = 1'b0; i <= 5096; i = i+1)
+	        //Mem[i] = 32'h0;
+	    end
+	  else 
+	    begin
+	      if (MemWrite_i)
+			   begin
+			     if (BE_i == 4'b1111) begin
+			       Mem[wdAddr] = DataIn_i;
+			       //$display("Mem[0x%x] = 0x%x", wdAddr, DataIn_i);
+			       $display("Mem[0x%x] = 0x%x", wdAddr, Mem[wdAddr]);
+			     end
+	         else if (BE_i == 4'b0011)
+	           Mem[wdAddr][15:0] = DataIn_i[15:0];//sh
+	         else if (BE_i == 4'b1100)
+	           Mem[wdAddr][31:16] = DataIn_i[15:0];//sh
+	         else if (BE_i == 4'b0001)
+	           Mem[wdAddr][7:0] = DataIn_i[7:0];//sb 
+	         else if (BE_i == 4'b0010)
+	           Mem[wdAddr][15:8] = DataIn_i[7:0];//sb
+	         else if (BE_i == 4'b0100)
+	           Mem[wdAddr][23:16] = DataIn_i[7:0];//sb
+	         else if (BE_i == 4'b1000)
+	           Mem[wdAddr][31:24] = DataIn_i[7:0];//sb
+			     $display("M[00-07]=%8X, %8X, %8X, %8X, %8X, %8X, %8X, %8X", Mem[0], Mem[1], Mem[2], Mem[3], Mem[4], Mem[5], Mem[6], Mem[7]);
+           $display("M[08-15]=%8X, %8X, %8X, %8X, %8X, %8X, %8X, %8X", Mem[8], Mem[9], Mem[10], Mem[11], Mem[12], Mem[13], Mem[14], Mem[15]);
+           $display("M[16-23]=%8X, %8X, %8X, %8X, %8X, %8X, %8X, %8X", Mem[16], Mem[17], Mem[18], Mem[19], Mem[20], Mem[21], Mem[22], Mem[23]);
+           $display("M[24-31]=%8X, %8X, %8X, %8X, %8X, %8X, %8X, %8X", Mem[24], Mem[25], Mem[26], Mem[27], Mem[28], Mem[29], Mem[30], Mem[31]);
+          end
+	    end
+	end
+	
+	always@(*)//read data combinationally
+	begin
+	 if (BE_i == 4'b1111)
+	   data <= Mem[wdAddr];
+	 else if (BE_i == 4'b0011)
+	   begin
+	     if (Sign_i == 1'b1)
+	       data <= {{16{Mem[wdAddr][15]}}, Mem[wdAddr][15:0]};//lh
+	     else
+	       data <= {16'b0, Mem[wdAddr][15:0]};//lhu
+	   end
+    else if (BE_i == 4'b1100)
+	   begin
+	     if (Sign_i == 1'b1)
+	       data <= {{16{Mem[wdAddr][31]}}, Mem[wdAddr][31:16]};//lh
+	     else
+	       data <= {16'b0, Mem[wdAddr][31:16]};//lhu
+	   end
+	  else if (BE_i == 4'b0001)
+	   begin
+	     if (Sign_i == 1'b1)
+	       data <= {{24{Mem[wdAddr][7]}}, Mem[wdAddr][7:0]};//lb
+	     else
+	       data <= {24'b0, Mem[wdAddr][7:0]};//lbu
+	   end
+	  else if (BE_i == 4'b0010)
+	   begin
+	     if (Sign_i == 1'b1)
+	       data <= {{24{Mem[wdAddr][15]}}, Mem[wdAddr][15:8]};//lb
+	     else
+	       data <= {24'b0, Mem[wdAddr][15:8]};//lhu
+	   end
+    else if (BE_i == 4'b0100)
+	   begin
+      if (Sign_i == 1'b1)
+        data <= {{24{Mem[wdAddr][23]}}, Mem[wdAddr][23:16]};//lb
+      else
+        data <= {24'b0, Mem[wdAddr][23:16]};//lbu
+     end
+    else if (BE_i == 4'b1000)
+      begin
+        if (Sign_i == 1'b1)
+          data <= {{24{Mem[wdAddr][31]}}, Mem[wdAddr][31:24]};//lb	                
+        else
+          data <= {24'b0, Mem[wdAddr][31:24]};//lbu
+      end
+    else
+      data <= 32'b0;
+	end
+	assign DataOut_o = data;
+endmodule
+

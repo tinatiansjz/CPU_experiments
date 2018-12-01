@@ -1,0 +1,9 @@
+`define SW  3'd000
+`define SH  3'd001
+`define SB  3'd010
+
+`define LW  3'd011
+`define LHU 3'd100
+`define LH  3'd101
+`define LBU 3'd110
+`define LB  3'd111

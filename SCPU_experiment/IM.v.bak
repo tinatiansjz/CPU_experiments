@@ -1,0 +1,58 @@
+//Instrution Memory(combinational element)
+module IM_bak(
+  input  [31:0] ImAddr_i,
+  output [31:0] Instr_o
+  );
+  
+	reg  [31:0] IMem[5096:0];//word address(the number of words)
+	//reg  [31:0] im[5096:0];//word address(the number of words)
+	
+	reg  [31:0] Instr;
+	wire [31:0] Opcode;
+	assign Opcode = {2'b0, ImAddr_i[31:2]};//ImAddress shifts right for two bits
+  /*initial
+  begin
+{im[3],im[2],im[1],im[0]} = 32'h34040001;
+{im[7],im[6],im[5],im[4]} = 32'h34050001;
+{im[11],im[10],im[9],im[8]} = 32'h340a0020;
+{im[15],im[14],im[13],im[12]} = 32'hac040000;
+{im[19],im[18],im[17],im[16]} = 32'hac050004;
+{im[23],im[22],im[21],im[20]} = 32'h34090002;
+{im[27],im[26],im[25],im[24]} = 32'h340c001e;
+{im[31],im[30],im[29],im[28]} = 32'h01495823;
+{im[35],im[34],im[33],im[32]} = 32'h0c000014;
+{im[39],im[38],im[37],im[36]} = 32'h01296821;
+{im[43],im[42],im[41],im[40]} = 32'h01ad6821;
+{im[47],im[46],im[45],im[44]} = 32'hada20000;
+{im[51],im[50],im[49],im[48]} = 32'h00052021;
+{im[55],im[54],im[53],im[52]} = 32'h8da50000;
+{im[59],im[58],im[57],im[56]} = 32'h340e0001;
+{im[63],im[62],im[61],im[60]} = 32'h01c94821;
+{im[67],im[66],im[65],im[64]} = 32'h018e6023;
+{im[71],im[70],im[69],im[68]} = 32'h01495823;
+{im[75],im[74],im[73],im[72]} = 32'h11800003;
+{im[79],im[78],im[77],im[76]} = 32'h116cfff4;
+{im[83],im[82],im[81],im[80]} = 32'h00851021;
+{im[87],im[86],im[85],im[84]} = 32'h0c000009;
+{im[91],im[90],im[89],im[88]} = 32'h340fffff;
+{im[95],im[94],im[93],im[92]} = 32'hac0f0080;
+  end*/
+  
+	initial
+	begin
+	  $readmemh("test1.txt", IMem, 12'hc00);
+	end
+	
+	always@(ImAddr_i)
+	begin
+		Instr = IMem[Opcode];	
+	end
+	assign Instr_o = Instr;
+endmodule
+
+
+
+
+
+
+

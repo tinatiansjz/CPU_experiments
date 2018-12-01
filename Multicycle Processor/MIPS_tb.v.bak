@@ -1,0 +1,18 @@
+module MIPS_tb(
+  );
+  `timescale 1ns/1ps
+  reg clk, rst_n;
+  MIPS mips(clk, rst_n);
+  initial begin
+    $monitor($time, "PC = %8x, IR = %8x", mips.my_PC.PC, mips.my_IR.IR);
+    $monitor($time, "state = %d", mips.my_Ctrl.state);
+    $monitor($time, "ALUOut = 0x%x", mips.my_ALUOut.ALUOut);
+    clk = 0;
+    rst_n = 0;
+    #1 rst_n =  0;
+    #2 rst_n = 1;
+  end
+  
+  always
+    #5 clk <= !clk;
+endmodule

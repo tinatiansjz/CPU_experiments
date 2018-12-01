@@ -1,0 +1,15 @@
+E:/Modelsim/examples/Regfile/Regfile.v {1 {vlog -work work -vopt E:/Modelsim/examples/Regfile/Regfile.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module regfile
+
+Top level modules:
+	regfile
+
+} {} {}} E:/Modelsim/examples/Regfile/rf_tb.v {1 {vlog -work work -vopt E:/Modelsim/examples/Regfile/rf_tb.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module rf_tb
+
+Top level modules:
+	rf_tb
+
+} {} {}}

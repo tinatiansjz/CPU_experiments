@@ -1,0 +1,133 @@
+E:/Modelsim/examples/MCPU_experiment/PC.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/PC.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/IR.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/IR.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module IR
+
+Top level modules:
+	IR
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/MIPS_tb.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/MIPS_tb.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module MIPS_tb
+
+Top level modules:
+	MIPS_tb
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/BE.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/BE.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module BE
+
+Top level modules:
+	BE
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/Instruction_def.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/Instruction_def.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/Memory.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/Memory.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Memory
+
+Top level modules:
+	Memory
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/A.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/A.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module A
+
+Top level modules:
+	A
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/EXT.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/EXT.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module EXT
+
+Top level modules:
+	EXT
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/Multi_CPU.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/Multi_CPU.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Multi_CPU
+
+Top level modules:
+	Multi_CPU
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/ALU.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/ALU.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/B.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/B.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module B
+
+Top level modules:
+	B
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/MUX.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/MUX.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module MUX
+
+Top level modules:
+	MUX
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/MDR.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/MDR.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module MDR
+
+Top level modules:
+	MDR
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/BEOp_def.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/BEOp_def.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/Ctrl.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/Ctrl.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Ctrl
+
+Top level modules:
+	Ctrl
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/Regfile.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/Regfile.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Regfile
+
+Top level modules:
+	Regfile
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/ALU_Ctrl.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/ALU_Ctrl.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module ALU_Ctrl
+
+Top level modules:
+	ALU_Ctrl
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/MIPS.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/MIPS.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module MIPS
+
+Top level modules:
+	MIPS
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/ALUOut.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/ALUOut.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module ALUOut
+
+Top level modules:
+	ALUOut
+
+} {} {}} E:/Modelsim/examples/MCPU_experiment/Branch_Ctrl.v {1 {vlog -work work -vopt E:/Modelsim/examples/MCPU_experiment/Branch_Ctrl.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Branch_Ctrl
+
+Top level modules:
+	Branch_Ctrl
+
+} {} {}}

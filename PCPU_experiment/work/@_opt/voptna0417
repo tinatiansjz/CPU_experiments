@@ -1,0 +1,449 @@
+m255
+K3
+13
+cModel Technology
+dE:\Modelsim\examples\MCPU_experiment
+T_opt
+VmM2lYF>XEFYJN9BCdQWO_1
+04 7 4 work MIPS_tb fast 0
+=13-c85b7639b160-5afeedfa-3a6-3a4c
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+OE;O;10.1a;51
+vAdd
+IZ<eDMz]JiHKMzDiomkFKF0
+Vz[6^obclEc`f@j5WWJeSG1
+Z0 dE:\Modelsim\examples\PCPU_experiment
+w1519728357
+8E:/Modelsim/examples/PCPU_experiment/Add.v
+FE:/Modelsim/examples/PCPU_experiment/Add.v
+L0 1
+Z1 OE;L;10.1a;51
+r1
+31
+Z2 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@add
+!s100 eV;@?YKXe1lihajhTG>1?3
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/Add.v|
+!s108 1526655171.303000
+!s107 E:/Modelsim/examples/PCPU_experiment/Add.v|
+!i10b 1
+!s85 0
+vALU
+I9WNSDDk=OOcRF2GV;DfX90
+V?8cfA11G]mRGNRiM4AY`a1
+Z3 dE:\Modelsim\examples\PCPU_experiment
+w1525570558
+8E:/Modelsim/examples/PCPU_experiment/ALU.v
+FE:/Modelsim/examples/PCPU_experiment/ALU.v
+L0 3
+R1
+r1
+31
+R2
+n@a@l@u
+!s100 nV^1@h;j3VlKTY6:]cYj?1
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/ALU.v|
+!s108 1526655178.433000
+!s107 Instruction_def.v|E:/Modelsim/examples/PCPU_experiment/ALU.v|
+!i10b 1
+!s85 0
+vALU_Ctrl
+I1_n?50`bY:PJ0bdZSZ<SG1
+V:dzEBNKC0jFl@Fz7A`WMf3
+R3
+w1519603619
+8E:/Modelsim/examples/PCPU_experiment/ALU_Ctrl.v
+FE:/Modelsim/examples/PCPU_experiment/ALU_Ctrl.v
+L0 3
+R1
+r1
+31
+R2
+n@a@l@u_@ctrl
+!s100 ]La=D5o0dlNX]HI563QTZ0
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/ALU_Ctrl.v|
+!s108 1526655171.753000
+!s107 Instruction_def.v|E:/Modelsim/examples/PCPU_experiment/ALU_Ctrl.v|
+!i10b 1
+!s85 0
+vBE
+IMSCj1YX4kLZ7lZ1MJ5jNf2
+VZd9YPnfW4P0XIFAI_6<F92
+R3
+w1519907330
+8E:/Modelsim/examples/PCPU_experiment/BE.v
+FE:/Modelsim/examples/PCPU_experiment/BE.v
+L0 3
+R1
+r1
+31
+R2
+n@b@e
+!s100 3CaF>WmLV<AIOl9GFkfJD3
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/BE.v|
+!s108 1526655172.063000
+!s107 BEOp_def.v|E:/Modelsim/examples/PCPU_experiment/BE.v|
+!i10b 1
+!s85 0
+vBranch_Ctrl
+IMTE[97@A<@0b5VEll0iPQ2
+VkBgkL[l=kcedU]A[j42Nd2
+R3
+w1519914418
+8E:/Modelsim/examples/PCPU_experiment/Branch_Ctrl.v
+FE:/Modelsim/examples/PCPU_experiment/Branch_Ctrl.v
+L0 1
+R1
+r1
+31
+R2
+n@branch_@ctrl
+!s100 2j74jnm9md@V3@bBVP02W1
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/Branch_Ctrl.v|
+!s108 1526655172.683000
+!s107 E:/Modelsim/examples/PCPU_experiment/Branch_Ctrl.v|
+!i10b 1
+!s85 0
+vCtrl
+IFkXYRHJU71AikzNZNeEgd0
+Vl8BFA5C^4]ciLOb^7hlM41
+R3
+w1526655135
+8E:/Modelsim/examples/PCPU_experiment/Ctrl.v
+FE:/Modelsim/examples/PCPU_experiment/Ctrl.v
+L0 3
+R1
+r1
+31
+R2
+n@ctrl
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/Ctrl.v|
+!s100 V[7<55TnPS[?a2e`QSQ582
+!s108 1526655179.703000
+!s107 Instruction_def.v|E:/Modelsim/examples/PCPU_experiment/Ctrl.v|
+!i10b 1
+!s85 0
+vDM
+I>5`MeH<;=i4:K7V19<ijM1
+VfBIm1:L9JDL7eLdV9N2Un0
+R3
+w1526030019
+8E:/Modelsim/examples/PCPU_experiment/DM.v
+FE:/Modelsim/examples/PCPU_experiment/DM.v
+L0 1
+R1
+r1
+31
+R2
+n@d@m
+!s100 D9`<?N^MJH6>=0RKTDi@Q2
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/DM.v|
+!s108 1526655179.083000
+!s107 E:/Modelsim/examples/PCPU_experiment/DM.v|
+!i10b 1
+!s85 0
+vEX_MEM
+IO=F_51gG7UZM36Y90YAI72
+V_oFVcSTK_1]FPPS<gOES81
+R3
+w1526028559
+8E:/Modelsim/examples/PCPU_experiment/EX_MEM.v
+FE:/Modelsim/examples/PCPU_experiment/EX_MEM.v
+L0 2
+R1
+r1
+31
+R2
+n@e@x_@m@e@m
+!s100 <gVQCiaHJQ5We_eaRZAf>3
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/EX_MEM.v|
+!s108 1526655173.043000
+!s107 E:/Modelsim/examples/PCPU_experiment/EX_MEM.v|
+!i10b 1
+!s85 0
+vEXT
+I2ii1idY[A[156oG=DLKT83
+V<7cNAXfh<OZUAQUXYJkY42
+R3
+w1513940014
+8E:/Modelsim/examples/PCPU_experiment/EXT.v
+FE:/Modelsim/examples/PCPU_experiment/EXT.v
+L0 2
+R1
+r1
+31
+R2
+n@e@x@t
+!s100 CdoXWmE@PNYh9i4[=JBMz1
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/EXT.v|
+!s108 1526655173.399000
+!s107 E:/Modelsim/examples/PCPU_experiment/EXT.v|
+!i10b 1
+!s85 0
+vFU
+ILJD1JPUE3bQM;`n<g:H2z0
+V:mZF][NbU69CO`6A<:OQj3
+R3
+w1519949514
+8E:/Modelsim/examples/PCPU_experiment/FU.v
+FE:/Modelsim/examples/PCPU_experiment/FU.v
+L0 2
+R1
+r1
+31
+R2
+n@f@u
+!s100 `NQ=4hfB>@W^7nPRezT>33
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/FU.v|
+!s108 1526655173.739000
+!s107 E:/Modelsim/examples/PCPU_experiment/FU.v|
+!i10b 1
+!s85 0
+vHDU
+I5EZdAfAmO1ZAn:LYai>^g0
+VF3lTl=j;Z`CHm0mgm[DKS3
+R3
+w1526653785
+8E:/Modelsim/examples/PCPU_experiment/HDU.v
+FE:/Modelsim/examples/PCPU_experiment/HDU.v
+L0 2
+R1
+r1
+31
+R2
+n@h@d@u
+!s100 <mITjo4L@iJC8PBH@zM^?3
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/HDU.v|
+!s108 1526655174.029000
+!s107 E:/Modelsim/examples/PCPU_experiment/HDU.v|
+!i10b 1
+!s85 0
+vID_EX
+ICBmZUPHGJmM_H>GYeY^E_3
+VG06W[^OYMJJYO1BMTK61I1
+R3
+w1526630009
+8E:/Modelsim/examples/PCPU_experiment/ID_EX.v
+FE:/Modelsim/examples/PCPU_experiment/ID_EX.v
+L0 1
+R1
+r1
+31
+R2
+n@i@d_@e@x
+!s100 S=7E@ZPK7m`_AofJnem]F2
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/ID_EX.v|
+!s108 1526655174.339000
+!s107 E:/Modelsim/examples/PCPU_experiment/ID_EX.v|
+!i10b 1
+!s85 0
+vIF_ID
+I5FNPE[S7=5ih:OMR5nYi=0
+VzF004b5`MO`OoBdTRc:1i2
+R3
+w1526656498
+8E:/Modelsim/examples/PCPU_experiment/IF_ID.v
+FE:/Modelsim/examples/PCPU_experiment/IF_ID.v
+L0 1
+R1
+r1
+31
+R2
+n@i@f_@i@d
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/IF_ID.v|
+!i10b 1
+!s100 lAT53^ikZo^B7<SoTKYY]3
+!s85 0
+!s108 1526656501.904000
+!s107 E:/Modelsim/examples/PCPU_experiment/IF_ID.v|
+vIM
+IZ7k8Oh@j<k_noO05DVC^51
+VZzT2KD6_nKET3^>F>jY=i1
+R3
+w1526053409
+8E:/Modelsim/examples/PCPU_experiment/IM.v
+FE:/Modelsim/examples/PCPU_experiment/IM.v
+L0 2
+R1
+r1
+31
+R2
+n@i@m
+!s100 ;>B?C:UdzWEhdCfXdZ?[N1
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/IM.v|
+!s108 1526655175.079000
+!s107 E:/Modelsim/examples/PCPU_experiment/IM.v|
+!i10b 1
+!s85 0
+vMEM_WB
+I;i`Vf9[0jJ[1m_]HC]RPK3
+VJgK]=JC=XSG[51G[V]gDc0
+R3
+w1526027445
+8E:/Modelsim/examples/PCPU_experiment/MEM_WB.v
+FE:/Modelsim/examples/PCPU_experiment/MEM_WB.v
+L0 2
+R1
+r1
+31
+R2
+n@m@e@m_@w@b
+!s100 NT5HWa;XWz22`Umn;H2hH0
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/MEM_WB.v|
+!s108 1526655175.729000
+!s107 E:/Modelsim/examples/PCPU_experiment/MEM_WB.v|
+!i10b 1
+!s85 0
+vMIPS
+IVYg9T6dQoERz;`W;<ng_Q2
+Vc_h=@SZJH5gm4HElh>=>K3
+R3
+w1526051859
+8E:/Modelsim/examples/PCPU_experiment/MIPS.v
+FE:/Modelsim/examples/PCPU_experiment/MIPS.v
+L0 1
+R1
+r1
+31
+R2
+n@m@i@p@s
+!s100 I=aNE509CO@ARDm5e3nf;3
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/MIPS.v|
+!s108 1526655176.059000
+!s107 E:/Modelsim/examples/PCPU_experiment/MIPS.v|
+!i10b 1
+!s85 0
+vMIPS_tb
+Iz[9_[JN7`XcWFhW1=UPRe3
+VO]iS4[R`21Ta`:D9kWDfJ3
+R3
+w1526027496
+8E:/Modelsim/examples/PCPU_experiment/MIPS_tb.v
+FE:/Modelsim/examples/PCPU_experiment/MIPS_tb.v
+L0 1
+R1
+r1
+31
+R2
+n@m@i@p@s_tb
+!s100 a^Kmi0SBo9>lL6_W]>abl3
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/MIPS_tb.v|
+!s108 1526655176.419000
+!s107 E:/Modelsim/examples/PCPU_experiment/MIPS_tb.v|
+!i10b 1
+!s85 0
+vMUX
+IIONInIEA<@@A94H84K53C1
+VTlneS0@MIV>01:h3ab0oS3
+R3
+w1511534451
+8E:/Modelsim/examples/PCPU_experiment/MUX.v
+FE:/Modelsim/examples/PCPU_experiment/MUX.v
+L0 1
+R1
+r1
+31
+R2
+n@m@u@x
+!s100 C5cM0I1n?b<@I8PgM>MgE2
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/MUX.v|
+!s108 1526655176.779000
+!s107 E:/Modelsim/examples/PCPU_experiment/MUX.v|
+!i10b 1
+!s85 0
+vOR
+I]Yz4_ZaX20;OzmTmCjWc21
+Ve`F44c0C01gj@SSdl5TiK2
+R3
+w1519814114
+8E:/Modelsim/examples/PCPU_experiment/OR.v
+FE:/Modelsim/examples/PCPU_experiment/OR.v
+L0 1
+R1
+r1
+31
+R2
+n@o@r
+!s100 3]kR8DVmn<bP>h[I7T:Ga2
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/OR.v|
+!s108 1526655177.083000
+!s107 E:/Modelsim/examples/PCPU_experiment/OR.v|
+!i10b 1
+!s85 0
+vPC
+I?]lNn5m9ODm[7[^0j>oU23
+V52Yo@e:di^k=P4@a64mUC1
+R3
+w1526054300
+8E:/Modelsim/examples/PCPU_experiment/PC.v
+FE:/Modelsim/examples/PCPU_experiment/PC.v
+L0 2
+R1
+r1
+31
+R2
+n@p@c
+!s100 :VI_e?=4c86Q<83EVAn1V1
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/PC.v|
+!s108 1526655177.423000
+!s107 E:/Modelsim/examples/PCPU_experiment/PC.v|
+!i10b 1
+!s85 0
+vPC_Ctrl
+Ienibm6gL`KlGQ1JY=^EOV1
+V`mZB;YKJ2>`jPRP9>W^c_0
+R3
+w1519570512
+8E:/Modelsim/examples/PCPU_experiment/PC_Ctrl.v
+FE:/Modelsim/examples/PCPU_experiment/PC_Ctrl.v
+L0 2
+R1
+r1
+31
+R2
+n@p@c_@ctrl
+!s100 MZfchGU`UZGjGKJd3YK`]0
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/PC_Ctrl.v|
+!s108 1526655177.763000
+!s107 E:/Modelsim/examples/PCPU_experiment/PC_Ctrl.v|
+!i10b 1
+!s85 0
+vPCPU
+ITHPB7NXV4hiIhPaV4U[4B0
+VYG?GE=kG`@i8gnTdcMCW<2
+R3
+w1526655149
+8E:/Modelsim/examples/PCPU_experiment/PCPU.v
+FE:/Modelsim/examples/PCPU_experiment/PCPU.v
+L0 1
+R1
+r1
+31
+R2
+n@p@c@p@u
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/PCPU.v|
+!s100 VeNPYlRk6JFLng5Z8zI0F2
+!s108 1526655179.413000
+!s107 E:/Modelsim/examples/PCPU_experiment/PCPU.v|
+!i10b 1
+!s85 0
+vRF
+IcQ;_V?U`18DZS7miY>3>30
+V:NV@RNcH:cMlH3OCcYDGO2
+R3
+w1526028172
+8E:/Modelsim/examples/PCPU_experiment/RF.v
+FE:/Modelsim/examples/PCPU_experiment/RF.v
+L0 2
+R1
+r1
+31
+R2
+n@r@f
+!s100 NV0=c1OdO8<^G8<aL2P[b2
+!s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/PCPU_experiment/RF.v|
+!s108 1526655178.103000
+!s107 E:/Modelsim/examples/PCPU_experiment/RF.v|
+!i10b 1
+!s85 0

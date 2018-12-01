@@ -1,0 +1,39 @@
+`include "Instruction_def.v"
+module MIPS(
+  input         clk,
+  input         rst_n,
+  output [31:0] PC_Addr,
+  output [31:0] Instr,
+  output [63:0] ALU_result,
+  output [31:0] wa_i
+  );
+  wire [1:0] RegDst;//00: rd field, 01: rt field, 10: $31(jal)
+  wire       ALUSrc;//0: register data, 1: sign_extend output
+  wire [1:0] MemtoReg;//00: ALU output, 01: register data, 10:{new_PC[31-28],Instr[25-0],2'b0}(jal)
+  wire       RegWrite;
+  wire       MemRead;
+  wire       MemWrite;
+  wire       Branch;
+  wire [1:0] ALUOp;//00: lw/sw, 01: beq, 10: R-type
+  wire       Jump;
+  wire [1:0] EXTOp;//00: zero extension, 01: sign extension, 10:put imm to high order bits
+  wire       zero;
+  wire [4:0] ALUOP;
+  wire [31:0] new_PC, RFdata, rd1, rd2, Imm32, alu2, DMdata, Branch_Add, mux3_out, final_PC;
+  PC my_PC(final_PC, clk, rst_n, PC_Addr);
+  Add_PC my_Add_PC(PC_Addr, new_PC);
+  IM my_IM(PC_Addr, Instr);//IF  
+  Ctrl my_Ctrl({Instr[31:26]}, RegDst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ALUOp, Jump, EXTOp);
+  MUX #(2) my_MUX2_1({27'b0,Instr[15:11]}, {27'b0,Instr[20:16]}, 32'd31, 32'b0, RegDst, wa_i);
+  RF my_RF(clk, rst_n, RegWrite, {wa_i[4:0]}, {Instr[25:21]}, {Instr[20:16]}, RFdata, rd1, rd2);
+  EXT my_EXT({Instr[15:0]}, EXTOp, Imm32);
+  MUX #(1) my_MUX1_1(rd2, Imm32, 32'b0, 32'b0, ALUSrc, alu2);
+  ALU_ctrl my_ALU_ctrl({Instr[3:0]}, ALUOp, ALUOP);
+  ALU my_ALU(ALUOP, rd1, alu2, ALU_result, zero);
+  DM my_DM(clk, rst_n, {ALU_result[31:0]}, rd2, MemWrite, MemRead, DMdata);
+  MUX #(2) my_MUX2_2({ALU_result[31:0]}, DMdata, {new_PC[31:28],Instr[25:0],2'b0}, 32'b0, MemtoReg, RFdata);
+  Add_Branch my_Add_Branch(new_PC, {Imm32[29:0],2'b0}, Branch_Add);
+  and my_and(PCSrc, Branch, zero);
+  MUX #(1) my_MUX1_2(new_PC, Branch_Add, 32'b0, 32'b0, PCSrc, mux3_out);
+  MUX #(1) my_MUX1_3(mux3_out, {new_PC[31:28],Instr[25:0],2'b0}, 32'b0, 32'b0, Jump, final_PC);
+endmodule

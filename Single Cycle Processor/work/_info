@@ -1,0 +1,352 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Modelsim\examples\Regfile
+T_opt
+Z1 Vd?DdR9GXN1NPnFgY9?[RN1
+Z2 04 7 4 work MIPS_tb fast 0
+Z3 =2-c85b7639b160-5a2543a2-329-4024
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 n@_opt
+Z6 OE;O;10.1a;51
+Z7 dE:\Modelsim\examples\Regfile
+T_opt1
+Z8 VcaPh=2DcPKWeH>XEU=7mB1
+R2
+Z9 =1-c85b7639b160-5a1b92b9-36-5de4
+Z10 o-quiet -auto_acc_if_foreign -work work
+Z11 n@_opt1
+R6
+R7
+T_opt2
+Z12 VI@0gPkS2nC>o=7=<fMaK_2
+Z13 04 7 4 work Regfile fast 0
+Z14 =1-c85b7639b160-5a1b92a3-d6-5c48
+R10
+Z15 n@_opt2
+R6
+R7
+vAdd_Branch
+Z16 !s100 Ae?_n1JHWFbX@;`hFzgon1
+Z17 I?e`N0UP^^RU1J1M[PQniU2
+Z18 VN]g^C8939PTaVNRha3G_W0
+Z19 dE:\Modelsim\examples\Single Cycle Processor
+Z20 w1511519571
+Z21 8E:/Modelsim/examples/Single Cycle Processor/Add_Branch.v
+Z22 FE:/Modelsim/examples/Single Cycle Processor/Add_Branch.v
+L0 2
+Z23 OE;L;10.1a;51
+r1
+31
+Z24 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/Add_Branch.v|
+Z25 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z26 n@add_@branch
+Z27 !s108 1517532870.956000
+Z28 !s107 E:/Modelsim/examples/Single Cycle Processor/Add_Branch.v|
+!i10b 1
+!s85 0
+vAdd_PC
+Z29 !s100 H8hXMFN8n_ICYI=^HOBfB1
+Z30 INViTn2W0GG>C8[O4B<nYl1
+Z31 V7lj>@f>7e>kfGBddWPn6z3
+R19
+Z32 w1511741363
+Z33 8E:/Modelsim/examples/Single Cycle Processor/Add_PC.v
+Z34 FE:/Modelsim/examples/Single Cycle Processor/Add_PC.v
+L0 2
+R23
+r1
+31
+Z35 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/Add_PC.v|
+R25
+Z36 n@add_@p@c
+Z37 !s108 1517532874.136000
+Z38 !s107 E:/Modelsim/examples/Single Cycle Processor/Add_PC.v|
+!i10b 1
+!s85 0
+vALU
+Z39 !s100 0E8VjG4cWaf4hNnVg5V_71
+Z40 IL0eZ_HhTmzB`>@]>ZPTS13
+Z41 Vl]]?lhIWI>0R_7d1Ok=W91
+R19
+Z42 w1511520801
+Z43 8E:/Modelsim/examples/Single Cycle Processor/ALU.v
+Z44 FE:/Modelsim/examples/Single Cycle Processor/ALU.v
+L0 3
+R23
+r1
+31
+Z45 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/ALU.v|
+R25
+Z46 n@a@l@u
+Z47 !s108 1517532867.026000
+Z48 !s107 Instruction_def.v|E:/Modelsim/examples/Single Cycle Processor/ALU.v|
+!i10b 1
+!s85 0
+vALU_ctrl
+Z49 IKN[4C1D?@mFHzgFY_AM@<1
+Z50 VQ_oHW=W`1a<[[ON@9b1]k1
+R19
+Z51 w1523603522
+Z52 8E:/Modelsim/examples/Single Cycle Processor/ALU_Ctrl.v
+Z53 FE:/Modelsim/examples/Single Cycle Processor/ALU_Ctrl.v
+L0 3
+R23
+r1
+31
+Z54 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/ALU_Ctrl.v|
+R25
+Z55 n@a@l@u_ctrl
+!i10b 1
+Z56 !s100 gkl9zZaCb>4T@d[IhCUR22
+!s85 0
+Z57 !s108 1523603524.631000
+Z58 !s107 Instruction_def.v|E:/Modelsim/examples/Single Cycle Processor/ALU_Ctrl.v|
+vCtrl
+!i10b 1
+!s100 ]Pizc_PZcKR=9;<VPZ1@X2
+INm7ASC31Td04S0ST5DQg33
+Z59 Vhf859^7H1lci<TWAoIg>j1
+R19
+w1523603614
+8E:\Modelsim\examples\Single Cycle Processor\Ctrl.v
+FE:\Modelsim\examples\Single Cycle Processor\Ctrl.v
+L0 3
+R23
+r1
+!s85 0
+31
+!s108 1523603615.852000
+!s107 Instruction_def.v|E:\Modelsim\examples\Single Cycle Processor\Ctrl.v|
+!s90 -reportprogress|300|-work|work|-vopt|E:\Modelsim\examples\Single Cycle Processor\Ctrl.v|
+R25
+Z60 n@ctrl
+vDM
+Z61 !s100 YDcaePLeWj7en<]I7fL`N1
+Z62 IXFSXGO[B^[BRl25gOOH[=0
+Z63 V[2QC1]hO^c@0TfLH?e;U81
+R19
+Z64 w1512391043
+Z65 8E:/Modelsim/examples/Single Cycle Processor/DM.v
+Z66 FE:/Modelsim/examples/Single Cycle Processor/DM.v
+L0 2
+R23
+r1
+31
+Z67 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/DM.v|
+R25
+n@d@m
+Z68 !s108 1517532869.156000
+Z69 !s107 E:/Modelsim/examples/Single Cycle Processor/DM.v|
+!i10b 1
+!s85 0
+vDMem
+Z70 If2^l[[cSFQL[bI<Z?00`b2
+Z71 VODZW@z63=:^X4PeO3dE<E2
+R19
+Z72 w1511147432
+R65
+R66
+L0 2
+R23
+r1
+31
+R25
+Z73 n@d@mem
+R67
+R69
+Z74 !s100 YJU[A;JI445MhJCnE;GO;2
+Z75 !s108 1511443092.968000
+!i10b 1
+!s85 0
+vEXT
+Z76 !s100 =]1AjgLR8f05LbCLzH7jX1
+Z77 IM_[VQCQi67cN;dQQ`C[::3
+Z78 V<7cNAXfh<OZUAQUXYJkY42
+R19
+Z79 w1511705991
+Z80 8E:/Modelsim/examples/Single Cycle Processor/EXT.v
+Z81 FE:/Modelsim/examples/Single Cycle Processor/EXT.v
+L0 2
+R23
+r1
+31
+Z82 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/EXT.v|
+R25
+Z83 n@e@x@t
+Z84 !s108 1517532870.516000
+Z85 !s107 E:/Modelsim/examples/Single Cycle Processor/EXT.v|
+!i10b 1
+!s85 0
+vIM
+Z86 !s100 FY5AXg=agUC=nL0:[Efj?3
+Z87 IhJYU^14D?IZQaMSb7@55P1
+Z88 VZzT2KD6_nKET3^>F>jY=i1
+R19
+Z89 w1513598249
+Z90 8E:/Modelsim/examples/Single Cycle Processor/IM.v
+Z91 FE:/Modelsim/examples/Single Cycle Processor/IM.v
+L0 2
+R23
+r1
+31
+Z92 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/IM.v|
+R25
+n@i@m
+Z93 !s108 1517532867.606000
+Z94 !s107 E:/Modelsim/examples/Single Cycle Processor/IM.v|
+!i10b 1
+!s85 0
+vIM_tb
+Z95 !s100 _G1Cmz26ff`m4RCcX:6mE3
+Z96 I:P:cD9I]bn1;d^mF3SGJ20
+Z97 Vic]TM>CoJ7GYzHD1h9g<z2
+R19
+Z98 w1511611056
+Z99 8E:/Modelsim/examples/Single Cycle Processor/IM_tb.v
+Z100 FE:/Modelsim/examples/Single Cycle Processor/IM_tb.v
+L0 1
+R23
+r1
+31
+Z101 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/IM_tb.v|
+R25
+Z102 n@i@m_tb
+Z103 !s108 1517532874.606000
+Z104 !s107 E:/Modelsim/examples/Single Cycle Processor/IM_tb.v|
+!i10b 1
+!s85 0
+vMIPS
+Z105 !s100 64YD=3G1iS?:Xn2cPkhdV0
+Z106 I>E3^9mMZ;JTMYn50M3_;I3
+Z107 V4`Wo>;YP4am>fN:k_HiMi1
+R19
+Z108 w1512391091
+Z109 8E:/Modelsim/examples/Single Cycle Processor/MIPS.v
+Z110 FE:/Modelsim/examples/Single Cycle Processor/MIPS.v
+L0 2
+R23
+r1
+31
+Z111 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/MIPS.v|
+R25
+Z112 n@m@i@p@s
+Z113 !s108 1517532871.986000
+Z114 !s107 Instruction_def.v|E:/Modelsim/examples/Single Cycle Processor/MIPS.v|
+!i10b 1
+!s85 0
+vMIPS_tb
+Z115 !s100 6Y2]6maTN6HR4BRb@8BeN1
+Z116 IP64K3]Bkc29aNV9El5jnN3
+Z117 VO]iS4[R`21Ta`:D9kWDfJ3
+R19
+Z118 w1512391468
+Z119 8E:/Modelsim/examples/Single Cycle Processor/MIPS_tb.v
+Z120 FE:/Modelsim/examples/Single Cycle Processor/MIPS_tb.v
+L0 1
+R23
+r1
+31
+Z121 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/MIPS_tb.v|
+R25
+Z122 n@m@i@p@s_tb
+Z123 !s108 1517532873.346000
+Z124 !s107 E:/Modelsim/examples/Single Cycle Processor/MIPS_tb.v|
+!i10b 1
+!s85 0
+vMUX
+Z125 !s100 VSIF7[_l@42M=EmeNnP5B3
+Z126 I<2HlS8XSVMMDFRzUG9Zak0
+Z127 VTlneS0@MIV>01:h3ab0oS3
+R19
+Z128 w1511534451
+Z129 8E:/Modelsim/examples/Single Cycle Processor/MUX.v
+Z130 FE:/Modelsim/examples/Single Cycle Processor/MUX.v
+L0 1
+R23
+r1
+31
+Z131 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/MUX.v|
+R25
+Z132 n@m@u@x
+Z133 !s108 1517532871.346000
+Z134 !s107 E:/Modelsim/examples/Single Cycle Processor/MUX.v|
+!i10b 1
+!s85 0
+vMUX_tb
+Z135 !s100 Ga[zNR<<=DHczNFSl<dd[3
+Z136 I4gdJMCG4Ud5AQR8?;EKR[2
+Z137 VM9hRWHild>;mK?kMBT?>J3
+R19
+Z138 w1511610339
+Z139 8E:/Modelsim/examples/Single Cycle Processor/MUX_tb.v
+Z140 FE:/Modelsim/examples/Single Cycle Processor/MUX_tb.v
+L0 1
+R23
+r1
+31
+Z141 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/MUX_tb.v|
+R25
+Z142 n@m@u@x_tb
+Z143 !s108 1517532875.056000
+Z144 !s107 E:/Modelsim/examples/Single Cycle Processor/MUX_tb.v|
+!i10b 1
+!s85 0
+vPC
+Z145 !s100 `Hh^dZ=_jDRmhTO^E>U5W0
+Z146 Ik<da5GDYGc?4PM?L?hAV]1
+Z147 VO;eXQ3m4h;IIf[Xcm`01X3
+R19
+Z148 w1511967556
+Z149 8E:/Modelsim/examples/Single Cycle Processor/PC.v
+Z150 FE:/Modelsim/examples/Single Cycle Processor/PC.v
+L0 2
+R23
+r1
+31
+Z151 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/PC.v|
+R25
+n@p@c
+Z152 !s108 1517532868.286000
+Z153 !s107 E:/Modelsim/examples/Single Cycle Processor/PC.v|
+!i10b 1
+!s85 0
+vRegfile
+Z154 I@az8i6l1Vo::`0Nco@fSb2
+Z155 V;[Kh?YjecJZ0a2[KC[0V;0
+R19
+Z156 w1511142158
+Z157 8E:/Modelsim/examples/Single Cycle Processor/Regfile.v
+Z158 FE:/Modelsim/examples/Single Cycle Processor/Regfile.v
+L0 1
+R23
+r1
+31
+R25
+Z159 n@regfile
+Z160 !s100 0BIJJ<V=SJBk@kX`59_FA0
+Z161 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/Regfile.v|
+Z162 !s108 1511144364.330000
+Z163 !s107 E:/Modelsim/examples/Single Cycle Processor/Regfile.v|
+!i10b 1
+!s85 0
+vRF
+Z164 !s100 00l>e7N:C09hil7IcIHC02
+Z165 IaAGb2E0R;nWLb<BzQSo]91
+Z166 Vl`z<YP;U3g:jHdfJF_T]I0
+R19
+Z167 w1512390247
+Z168 8E:/Modelsim/examples/Single Cycle Processor/RF.v
+Z169 FE:/Modelsim/examples/Single Cycle Processor/RF.v
+L0 2
+R23
+r1
+31
+Z170 !s90 -reportprogress|300|-work|work|-vopt|E:/Modelsim/examples/Single Cycle Processor/RF.v|
+R25
+n@r@f
+Z171 !s108 1517532868.696000
+Z172 !s107 E:/Modelsim/examples/Single Cycle Processor/RF.v|
+!i10b 1
+!s85 0

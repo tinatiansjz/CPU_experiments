@@ -1,0 +1,23 @@
+# Current time Sat Nov 25 17:24:25 2017
+# ModelSim Stack Trace
+# Program = vsim
+# Id = "10.1a"
+# Version = "2012.02"
+# Date = "Feb 22 2012"
+# Platform = win32
+# 0    0x0077f0a8: '<unknown (@0x77f0a8)>'
+# 1    0x0078213c: '<unknown (@0x78213c)>'
+# 2    0x1000c770: 'TclEvalObjvInternal + 0x230' in 'e:\modelsim\win32\tcl84.dll'
+# 3    0x1000dd77: 'Tcl_EvalEx + 0x167' in 'e:\modelsim\win32\tcl84.dll'
+# 4    0x1000e0d6: 'Tcl_Eval + 0x16' in 'e:\modelsim\win32\tcl84.dll'
+# 5    0x1000e53c: 'Tcl_GlobalEval + 0x1c' in 'e:\modelsim\win32\tcl84.dll'
+# 6    0x009ec081: '<unknown (@0x9ec081)>'
+# 7    0x1003b375: 'Tcl_NotifyChannel + 0xd5' in 'e:\modelsim\win32\tcl84.dll'
+# 8    0x1006b4dd: 'TclpCreateProcess + 0xced' in 'e:\modelsim\win32\tcl84.dll'
+# 9    0x1004aed0: 'Tcl_ServiceEvent + 0x60' in 'e:\modelsim\win32\tcl84.dll'
+# 10   0x1004b11e: 'Tcl_DoOneEvent + 0x10e' in 'e:\modelsim\win32\tcl84.dll'
+# 11   0x00b280bc: '<unknown (@0xb280bc)>'
+# 12   0x00763568: '<unknown (@0x763568)>'
+# End of Stack Trace
+
+

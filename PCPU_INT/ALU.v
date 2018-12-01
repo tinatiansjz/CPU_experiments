@@ -1,0 +1,135 @@
+`include "Instruction_def.v"
+//Arithmetic Logic Unit
+module ALU(
+  input   [4:0] aluop_i,
+  input   [31:0]src0_i,//rs or shamt
+  input   [31:0]src1_i,//rd or transformed imm
+  
+  output  [63:0]aluout_o,
+  output        zero_o,
+  output        overflow_o//Arithmetic Overflow(Ov)
+  );
+  reg  [63:0]aluout;
+  reg        zero;
+  reg        overflow, arith_overflow;
+  reg  [31:0]logic_rlt;
+  reg  [31:0]shift_rlt;
+  reg  [31:0]arith_rlt;
+
+  //logic
+  always@(*)
+  begin
+    case (aluop_i)
+     `ALUOP_AND:
+          logic_rlt = src0_i & src1_i;
+	   `ALUOP_OR:
+		      logic_rlt = src0_i | src1_i;
+	   `ALUOP_NOR:
+		      logic_rlt = ~(src0_i | src1_i);
+		  `ALUOP_XOR:	                                       //xor
+		      logic_rlt = src0_i ^ src1_i;
+	   default:
+		      logic_rlt = 32'b0;
+    endcase
+  end  
+
+  //shift
+  always@(*)
+  begin
+    case (aluop_i)
+      `ALUOP_SLL:
+          shift_rlt = src1_i<<src0_i[4:0];
+	    `ALUOP_SRL:
+		      shift_rlt = src1_i>>src0_i[4:0];
+	    `ALUOP_SRA:
+		      shift_rlt = src1_i>>src0_i[4:0] | ({32{src1_i[31]}}<<(6'd32-{1'b0,src0_i[4:0]}));
+	   default:
+		      shift_rlt = 32'b0;
+    endcase
+  end
+
+  //arith
+  reg [31:0]tmp_difference;
+  always@(*)
+  begin
+    tmp_difference=src0_i-src1_i;
+    case (aluop_i)
+      `ALUOP_ADD:
+        begin  
+          arith_rlt = src0_i+src1_i;
+          arith_overflow =  (~(src0_i>>31) & ~(src1_i>>31) & (arith_rlt>>31)) | ((src0_i>>31) & (src1_i>>31) & ~(arith_rlt>>31));
+            //pos_ovf | neg_ovf (sign-add only, and the testbench doesn't include addu's overflow)
+        end
+      `ALUOP_SUB:
+        begin
+          arith_rlt = tmp_difference;
+          arith_overflow = ((src0_i>>31) != (src1_i>>31)) && ((src1_i>>31) == arith_rlt>>31);
+          //outcome = a-b; the signs of a and b are different, and the signs of the outcome and b are same -> overflow
+          //sign-sub only
+        end
+      `ALUOP_SLT:
+        begin
+          arith_rlt = (
+                        (src0_i[31] && !src1_i[31])
+                    ||  (!src0_i[31] && !src1_i[31] && tmp_difference[31])
+                    ||  (src0_i[31] && src1_i[31] && tmp_difference[31])
+                    )? 32'd1:32'd0;
+          arith_overflow = 1'b0;
+        end
+      `ALUOP_SLTU:
+        begin
+          arith_rlt = {31'd0,src0_i<src1_i};
+          arith_overflow = 1'b0;
+        end
+      default:
+        begin
+          arith_rlt = 32'd0;
+          arith_overflow = 1'b0;
+        end
+    endcase
+  end
+
+  //result sel
+  always@(*)
+  begin
+    case(aluop_i)
+      `ALUOP_NOP:
+        begin
+          aluout = 64'd0;
+          overflow = 1'b0;
+        end
+      `ALUOP_ADD,
+      `ALUOP_SUB,
+      `ALUOP_SLT,
+      `ALUOP_SLTU:
+        begin
+          aluout = {32'd0,arith_rlt};
+          overflow = arith_overflow;
+        end
+      `ALUOP_AND,
+      `ALUOP_NOR,
+      `ALUOP_OR,
+      `ALUOP_XOR:
+        begin
+          aluout = logic_rlt;
+          overflow = 1'b0;
+        end
+      `ALUOP_SLL,
+      `ALUOP_SRL,
+      `ALUOP_SRA:
+        begin
+          aluout = shift_rlt;
+          overflow = 1'b0;
+        end
+      default:
+        begin
+          aluout = 64'd0;
+          overflow = 1'b0;
+        end
+    endcase
+    zero = (aluout_o == 64'd0);
+  end
+  assign zero_o = zero;
+  assign aluout_o = aluout;
+  assign overflow_o = overflow;
+endmodule

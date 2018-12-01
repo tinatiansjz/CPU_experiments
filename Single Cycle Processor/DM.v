@@ -1,0 +1,41 @@
+//Data Memory
+module DM(
+  input clk, 
+  input rst_n,
+  input [31:0] Addr_i,
+  input [31:0] DataIn_i,//Data that needs to written back to DM
+  input MemWrite_i,//DM control signal
+  input MemRead_i, //DM control signal
+  
+  output [31:0] DataOut_o
+  );
+	wire [31:0] wdAddr;
+	reg  [31:0] DMem[31:0];
+	reg  [31:0] data;
+	integer i;
+	assign wdAddr = {2'b0, Addr_i[31:2]};//ImAddress shifts right for two bits
+	always@(*)//read data (combinationally)
+	begin
+	  if (!rst_n)
+	    begin
+	      for (i = 1'b0; i < 32; i = i+1)
+	        DMem[i] = 32'h0;
+	    end
+	  else 
+	    begin
+	       if (MemRead_i)
+	         data <= DMem[wdAddr];
+	    end
+	end
+	
+	always@(posedge clk)
+	begin
+		if (MemWrite_i)
+		  begin
+			 DMem[wdAddr] <= DataIn_i;
+			 $display("DMem[%d] = 0x%x", wdAddr, DataIn_i);
+			end
+	end
+	assign DataOut_o = data;
+endmodule
+

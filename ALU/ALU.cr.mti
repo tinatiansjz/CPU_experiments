@@ -1,0 +1,18 @@
+E:/Modelsim/examples/ALU/ALU.v {1 {vlog -work work -vopt E:/Modelsim/examples/ALU/ALU.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} E:/Modelsim/examples/ALU/alu_tb.v {1 {vlog -work work -vopt E:/Modelsim/examples/ALU/alu_tb.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module alu_tb
+
+Top level modules:
+	alu_tb
+
+} {} {}} E:/Modelsim/examples/ALU/define.v {1 {vlog -work work -vopt E:/Modelsim/examples/ALU/define.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+
+} {} {}}

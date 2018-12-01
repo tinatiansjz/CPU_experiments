@@ -1,0 +1,18 @@
+Fri Apr 13 15:29:16 ?????? 2018
+Trace back: can't read "Project(SaveCompileReport)": no such element in array
+    while executing
+"if { $Project(SaveCompileReport) } {
+			Project::saveCompileReport
+		}"
+    (procedure "Project::unload" line 20)
+    invoked from within
+"Project::unload"
+    (procedure "Project::checkCloseCurrentProject" line 24)
+    invoked from within
+"Project::checkCloseCurrentProject"
+    (procedure "Project::createDialog" line 18)
+    invoked from within
+"Project::createDialog"
+    (menu invoke)
+  <2: ::tkerror {can't read "Project(SaveCompileReport)": no such element in array}
+  <1: ::bgerror {can't read "Project(SaveCompileReport)": no such element in array}

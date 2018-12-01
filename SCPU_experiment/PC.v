@@ -1,0 +1,27 @@
+//Program Counter (state element)
+module PC(
+  input  [31:0] new_PC,
+  input         clk,
+  input         rst_n,//
+  output [31:0] PC_Addr
+  );
+  reg [31:0] Addr;
+	reg [31:0] PC;
+	
+	always@(posedge clk or posedge rst_n)
+	begin
+	  if (rst_n)
+	    begin
+	      PC = 32'h0000_3000;
+	      //PC = 32'b0;   
+	    end
+	  else
+	    begin
+	      PC = new_PC;
+	      //$display("%x", PC);
+	    end  
+	end
+	assign PC_Addr = PC;
+endmodule
+	
+	

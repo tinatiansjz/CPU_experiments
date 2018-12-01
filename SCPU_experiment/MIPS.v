@@ -1,0 +1,17 @@
+`include "Instruction_def.v"
+module MIPS(
+  input         clk,
+  input         rst_n,
+  output [31:0] PC_Addr,
+  output [31:0] Instr,
+  output [63:0] ALU_result
+  );
+  wire        MemWrite;
+  wire [31:0] DMdata, rd2;
+  
+  SCPU SCPU(.clk(clk), .reset(rst_n), .MIO_ready(), .inst_in(Instr), .Data_in(DMdata), .INT(), .mem_w(MemWrite),
+            .PC_out(PC_Addr), .Addr_out({ALU_result[31:0]}), .Data_out(rd2), .CPU_MIO());
+            
+  IM my_IM(PC_Addr, Instr);//IF  
+  DM my_DM(clk, rst_n, {ALU_result[31:0]}, rd2, MemWrite, DMdata);
+endmodule

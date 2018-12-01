@@ -1,0 +1,8 @@
+module SYNinterrupt(
+  input clk,
+  input rst,
+  input INT,
+  
+  output SYN_INT);
+  
+endmodule

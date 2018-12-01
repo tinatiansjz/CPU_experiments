@@ -1,0 +1,65 @@
+module PCPU(
+  input        clk,
+	input        reset,
+	input        MIO_ready,							
+	input [31:0] inst_in,
+	input [31:0] Data_in,	
+	input        INT,						
+	output       mem_w,
+	output[31:0] PC_out,
+	output[31:0] Addr_out,
+	output[31:0] Data_out, 
+	output       CPU_MIO
+  );
+  wire        PC_IFWrite, IF_flush, Jump_id, ALUSrcA_id, ALUSrcB_id, MemWrite_id, MemRead_id, RegWrite_id,
+              stall, ALUSrcB_ex, ALUSrcA_ex, Zero_ex, Sign_mem, MemWrite_mem, RegWrite_wb, enable; 
+  wire [1:0]  PCSource_id, EXTOp_id, RegDst_id, MemtoReg_id, RegDst_ex, ForwardA, ForwardB, ForwardC, ForwardD, Out_3_if, MemtoReg_wb;
+  wire [2:0]  Branch_id, ALUOp_id, BEOp_id, ALUOp_ex, BEOp_mem;
+  wire [3:0]  BE_mem; 
+  wire [4:0]  ALUcontrol;
+  wire [31:0] new_PC, PC_Addr, NPC_if, Instr_id, NPC_id, BA_id, rs_id, rt_id, EXT_id, rs1_id,
+              Signal_ex, NPC_ex, rs_ex, rt_ex, EXT_ex, Instr_ex, RD_ex, src1_ex, src2_ex, Out_1_ex, Out_2_ex, rt1_ex, 
+              NPC_mem, rt_mem, EXT_mem, RD_mem, Signal_mem, ALUOut_mem,
+              wd_wb, RD_wb, NPC_wb, ALUOut_wb, EXT_wb, MD_wb;
+  wire [63:0] ALUOut_ex;
+              
+  Ctrl my_Ctrl({Instr_id[31:26]}, Instr_id[16], {Instr_id[5:0]}, Branch_id, PCSource_id, Jump_id, EXTOp_id,
+    RegDst_id, ALUSrcA_id, ALUSrcB_id, ALUOp_id, BEOp_id, MemRead_id, MemWrite_id, MemtoReg_id, RegWrite_id);
+  MUX #(2) MUX2_4(NPC_if, BA_id, {NPC_id[31:28], Instr_id[25:0], 2'b0}, rs1_id, Out_3_if, new_PC);
+  MUX #(2) MUX2_7(rs_id, {ALUOut_ex[31:0]}, ALUOut_mem, wd_wb, ForwardD, rs1_id);
+  PC my_PC(clk, new_PC, PC_IFWrite, reset, PC_Addr);
+  Add Add_1(PC_Addr, 32'd4, NPC_if);
+  //IM my_IM(PC_Addr, Inst_in);
+  OR OR_1(enable, Jump_id, IF_flush);
+  IF_ID my_IF_ID(NPC_if, inst_in, clk, reset, IF_flush, PC_IFWrite, NPC_id, Instr_id);
+  ID_EX my_ID_EX(clk, reset, stall, IF_flush, RegDst_id, ALUSrcA_id, ALUSrcB_id, ALUOp_id, BEOp_id, MemRead_id, MemWrite_id, MemtoReg_id,
+    RegWrite_id, NPC_id, BA_id, rs_id, rt_id, EXT_id, Instr_id, ALUOp_ex, ALUSrcB_ex, ALUSrcA_ex, RegDst_ex, Signal_ex, NPC_ex, rs_ex, 
+    rt_ex, EXT_ex, Instr_ex);
+  RF my_RF(clk, reset, RegWrite_wb, {RD_wb[4:0]}, {Instr_id[25:21]}, {Instr_id[20:16]}, wd_wb, rs_id, rt_id);
+  Branch_Ctrl my_Branch_Ctrl(Branch_id, rs_id, rt_id, enable);
+  PC_Ctrl my_PC_Ctrl(enable, PCSource_id, Out_3_if);
+  EXT my_EXT({Instr_id[15:0]}, EXTOp_id, EXT_id);
+  Add Add_2(NPC_id, {EXT_id[29:0], 2'b0}, BA_id);
+  MUX #(1) MUX1_1(rs_ex, {27'b0, Instr_ex[10:6]}, 32'b0, 32'b0, ALUSrcA_ex, Out_1_ex);
+  MUX #(1) MUX1_2(rt_ex, EXT_ex, 32'b0, 32'b0, ALUSrcB_ex, Out_2_ex);
+  ALU_Ctrl my_ALU_Ctrl(Instr_ex[5:0], ALUOp_ex, ALUcontrol);
+  MUX #(2) MUX2_1(Out_1_ex, ALUOut_mem, wd_wb, 32'b0, ForwardA, src1_ex);
+  MUX #(2) MUX2_2(Out_2_ex, ALUOut_mem, wd_wb, 32'b0, ForwardB, src2_ex);
+  ALU my_ALU(ALUcontrol, src1_ex, src2_ex, ALUOut_ex, Zero_ex); 
+  EX_MEM my_EX_MEM(clk, reset, Signal_ex, NPC_ex, {ALUOut_ex[31:0]}, rt1_ex, EXT_ex, RD_ex, Signal_mem, BEOp_mem, MemRead_mem, 
+    MemWrite_mem, NPC_mem, ALUOut_mem, rt_mem, EXT_mem, RD_mem);
+  MUX #(2) MUX2_5({27'h0, Instr_ex[20:16]}, {27'h0, Instr_ex[15:11]}, 32'd31, 32'd0, RegDst_ex, RD_ex);
+  BE my_BE(BEOp_mem, ALUOut_mem[1:0], BE_mem, Sign_mem);
+  //DM my_DM(clk, reset, ALUOut_mem, rt_mem, MemWrite_mem, MemRead_mem, BE_mem, Sign_mem, Data_in);
+  MEM_WB my_MEM_WB(clk, reset, Signal_mem, NPC_mem, Data_in, ALUOut_mem, EXT_mem, RD_mem, MemtoReg_wb,
+    RegWrite_wb, NPC_wb, MD_wb, ALUOut_wb, EXT_wb, RD_wb);
+  MUX #(2) MUX2_3(ALUOut_wb, MD_wb, NPC_wb, EXT_wb, MemtoReg_wb, wd_wb);
+  HDU my_HDU(Signal_ex[10], Signal_mem[10], {Instr_id[25:21]}, {Instr_id[20:16]}, {Instr_ex[20:16]}, {RD_ex[4:0]}, {RD_mem[4:0]}, Jump_id, {Instr_id[31:26]}, Signal_ex[14], Signal_mem[14], Branch_id, stall, PC_IFWrite);
+  FU my_FU({Instr_id[25:21]}, Jump_id, {Instr_ex[25:21]}, {Instr_ex[20:16]}, {RD_ex[4:0]}, {RD_mem[4:0]}, {RD_wb[4:0]}, {Instr_id[31:26]}, {Instr_ex[31:26]}, Signal_ex[11], Signal_ex[14], Signal_mem[14], RegWrite_wb, ForwardA, ForwardB, ForwardC, ForwardD);
+  MUX #(2) MUX2_6(rt_ex, ALUOut_mem, wd_wb, 32'h0, ForwardC, rt1_ex);
+  
+  assign Addr_out = ALUOut_mem;
+  assign Data_out = rt_mem;
+  assign PC_out = PC_Addr;
+  assign mem_w = MemWrite_mem;
+endmodule

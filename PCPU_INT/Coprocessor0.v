@@ -1,0 +1,62 @@
+//Register File
+module Coprocessor0(
+  input        clk,
+  input        rst,
+  input        CauseEPCWrite_i,
+  input        CRFWrite_i,//for mtc0
+  input        RETOp_i,
+  input  [31:0]ExcCode_i,//ExcCode[1:0] (INT--0, Sys--1, Unimpl--2, Ov--3)
+  input  [31:0]EPC_i,
+  input  [4:0] wa_i, //rd, write address  Instr[15:11]
+  input  [4:0] ra_i, //rd, read address  (Register number) Instr[15:11]
+  input  [31:0]wd_i, //write data
+  
+  output [31:0]Cause_o,
+  output [31:0]Status_o,
+  output [31:0]EPC_o,
+  output [31:0]rd_o   //rt, read data
+  );
+  
+  reg [31:0] CRF [14:0]; //31 31-bit register
+  integer    i;
+  
+  always@(posedge clk or posedge rst)
+  begin
+    if (rst)
+      begin
+        for (i = 1'b0; i < 15; i = i+1) begin
+          CRF[i] = 32'h0; end
+        CRF[13][3:0] = 4'b1111;//Status
+        //1 in IM field indicates that the corresponding interrupt or exception is enabled; a 0 indicates that it is disabled.
+      end
+    else
+      begin
+        if (CauseEPCWrite_i && CRF[13][{ExcCode_i[1:0]}] == 1)//the interrupt or exception is enabled
+          begin
+            CRF[12][3:2] = ExcCode_i[1:0];//Cause
+            CRF[13] = {CRF[13][27:0], 4'b0};//Shift the contents of the Status register to the left by 4 bits.
+            CRF[14] = EPC_i - 32'h4;
+            $display("Cause=%8X, Status=%8X, EPC=%8X", CRF[12], CRF[13], CRF[14]);
+          end
+        else if (CRFWrite_i)//for mtc0
+          begin
+            CRF[wa_i] = wd_i;
+            $display("Cause=%8X, Status=%8X, EPC=%8X", CRF[12], CRF[13], CRF[14]);
+          end
+        else if (RETOp_i)
+          begin
+            CRF[13] = {4'b0, CRF[13][31:4]};//Resume interrupt/exception response
+          end
+      end
+  end
+  assign Cause_o = CRF[12];
+  assign Status_o = CRF[13];
+  assign EPC_o = CRF[14];
+  assign rd_o = CRF[ra_i];
+endmodule
+
+/*
+Cause     12     ExcCode (INT--0, Sys--1, Unimpl--2, Ov--3) 
+Status    13     S(7-4) M(3-0)
+EPC       14     Int: PC->EPC; Sys: PCD->EPC; Unimpl: PCE->EPC; Ov: PCM->EPC
+*/

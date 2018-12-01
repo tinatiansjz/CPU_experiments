@@ -1,0 +1,16 @@
+module A(
+  input clk,
+  input rst_n,
+  input [31:0] Rdata1_i,//Regfile Read-data1
+  
+  output [31:0] data1_o
+  );
+  reg [31:0] A;
+  always@(posedge clk or negedge rst_n)
+  begin
+    if (!rst_n)
+      A <= 32'h0;
+    else
+      A <= Rdata1_i;
+  end
+endmodule
