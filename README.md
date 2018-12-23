@@ -45,7 +45,7 @@ On the second semester of sophomore, the codes were downloaded to the FPGA board
 > - [ ] Pipeline CPU based interrupt (INT), exception(syscall) implementation
 [Five-stage pipeline, support Forwarding, Hazard detection] (the folder is ./PCPU_INT)
 
-*(Note 1: First operate on Modelsim. If there is no problem with the simulation, turn to the physical object.)
+*(Note 1: First operate on Modelsim. If there is no problem with the simulation, turn to the physical object.)  
 (Note 2: The experiment of INT & syscall requires to write the test file .asm on your own. Unluckily, I failed to finish it at the end. A lot of time and effort were put into it, but still I couldn't find the bug /(ㄒoㄒ)/~~ The desired result didn't achieved. The last and the only thing I could do is let it go...)*
 
 good luck!
